@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="card">
+    <view class="title text-center">旅行攻略快速生成工具</view>
+    
+    <view class="form-group">
+      <view class="form-item">
+        <text class="label">要去哪</text>
+        <picker bindchange="onCityChange" value="{{cityIndex}}" range="{{cities}}">
+          <view class="picker flex-center">
+            {{cities[cityIndex] || '请选择城市'}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <text class="label">啥时去</text>
+        <picker bindchange="onTimeChange" value="{{timeIndex}}" range="{{timeOptions}}">
+          <view class="picker flex-center">
+            {{timeOptions[timeIndex] || '请选择时间'}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <text class="label">我偏好（选填）</text>
+        <input class="input" placeholder="如：休闲游，少走路" bindinput="onPreferenceInput" value="{{preferences}}"/>
+      </view>
+    </view>
+
+    <button class="btn btn-primary w-100" bindtap="onSubmit" disabled="{{!isValid}}">生成旅行路线</button>
+  </view>
+</view> 
