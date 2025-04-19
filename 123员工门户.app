@@ -1,1 +1,0 @@
-/Applications/123员工门户.app
